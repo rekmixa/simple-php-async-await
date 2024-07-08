@@ -1,0 +1,9 @@
+build
+phpunit.xml
+vendor
+.php_cs.cache
+.phpunit.result.cache
+
+.env
+.pecl
+docker-compose.override.yml

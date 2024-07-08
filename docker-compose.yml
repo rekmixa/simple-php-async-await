@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+  php:
+    build:
+      context: docker/php
+      args:
+        USER_ID: 1000
+    working_dir: /app
+    volumes:
+      - ./docker/php/10-php.ini:/usr/local/etc/php/conf.d/10-php.ini
+      - ~/.composer-docker/cache:/var/www/.composer/cache:delegated
+      - ./:/app
+    environment:
+      PHP_USER_ID: 1000
+    restart: ${RESTART}
+
+networks:
+  web:
+    external: true

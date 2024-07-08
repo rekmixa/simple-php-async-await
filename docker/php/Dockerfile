@@ -25,8 +25,5 @@ RUN apt update \
 
 RUN apt-get update && apt-get install -y libpq-dev && docker-php-ext-install pdo pdo_pgsql
 
-RUN curl -sS https://get.symfony.com/cli/installer | bash
-RUN mv /root/.symfony5/bin/symfony /usr/local/bin/symfony
-
 ENTRYPOINT ["bootstrap.sh"]
 CMD ["php-fpm"]

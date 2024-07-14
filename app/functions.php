@@ -4,12 +4,16 @@ declare(strict_types=1);
 
 namespace App;
 
-function async(callable $callback): Promise
+/**
+ * @param callable(Task): mixed $coroutine
+ * @return Promise
+ */
+function async(callable $coroutine): Promise
 {
-    return new Promise();
+    return Loop::get()->async($coroutine);
 }
 
 function await(Promise $promise): mixed
 {
-    return '';
+    return Loop::get()->await($promise);
 }

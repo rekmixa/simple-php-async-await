@@ -18,12 +18,12 @@ async(static function (Task $task): void {
     }
 });
 
-async(static function (Task $task): void {
+await(async(static function (Task $task): void {
     for ($i = 0; $i < 3; $i++) {
         Console::output('Task #' . $task->getId() . ' iteration ' . $i);
         $task->suspend();
     }
-});
+}));
 
 $promise = async(static function (): array {
     return [

@@ -26,7 +26,7 @@ final class CreateOrderCase
 
         // откладываем отправку уведомления клиенту для того, чтобы клиентский код
         // мог незамедлительно начать работу с только что созданным заказом
-        // задержка выполнения для отправки уведомлений в данном случае нецелесообразна
+        // блокировка I/O в данном случае нецелесообразна
         async(fn() => $this->notifier->notify($customer, new OrderCreated()));
         async(fn() => $this->crm->createTask(new NeedToHandleOrder($order->getId())));
 

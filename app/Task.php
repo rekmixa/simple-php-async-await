@@ -8,7 +8,6 @@ use Fiber;
 
 final class Task
 {
-    private bool $isStarted = false;
     private int $taskId;
 
     public function __construct(int $taskId)
@@ -19,11 +18,6 @@ final class Task
     public function getId(): int
     {
         return $this->taskId;
-    }
-
-    public function isStarted(): bool
-    {
-        return $this->isStarted;
     }
 
     public function suspend(): void

@@ -34,6 +34,7 @@ $promise = async(static function (): array {
 $promise
     ->then(static function (array $data): int {
         Console::output('Data: ' . var_export($data, true));
+
         return $data['value'];
     })
     ->then(static function (int $value): void {

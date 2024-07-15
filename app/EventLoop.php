@@ -8,7 +8,7 @@ use SplQueue;
 use WeakMap;
 use Fiber;
 
-final class Loop
+final class EventLoop
 {
     private static ?self $instance = null;
 

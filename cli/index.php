@@ -1,6 +1,6 @@
 <?php
 
-use App\Loop;
+use App\EventLoop;
 
 use App\Task;
 
@@ -48,4 +48,4 @@ async(static function (Task $task): void {
     Console::output('Task #' . $task->getId());
 });
 
-Loop::get()->run();
+EventLoop::get()->run();

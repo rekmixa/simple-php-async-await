@@ -10,10 +10,10 @@ namespace App;
  */
 function async(callable $coroutine): Promise
 {
-    return Loop::get()->async($coroutine);
+    return EventLoop::get()->async($coroutine);
 }
 
 function await(Promise $promise): mixed
 {
-    return Loop::get()->await($promise);
+    return EventLoop::get()->await($promise);
 }

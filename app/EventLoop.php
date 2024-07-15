@@ -8,7 +8,7 @@ use SplQueue;
 use WeakMap;
 use Fiber;
 
-final class EventLoop
+final class EventLoop implements EventLoopInterface
 {
     private static ?self $instance = null;
 
@@ -63,7 +63,7 @@ final class EventLoop
         return $promise;
     }
 
-    public function await(Promise $promise): mixed
+    public function await(PromiseInterface $promise): mixed
     {
         /** @var Task $task */
         $task = $this->taskMap[$promise];
